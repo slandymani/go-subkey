@@ -7,8 +7,8 @@ import (
 	"errors"
 
 	"github.com/ChainSafe/go-schnorrkel"
-	"github.com/vedhavyas/go-subkey/v2"
-	"github.com/vedhavyas/go-subkey/v2/scale"
+	"github.com/ComposableFi/go-subkey/v2"
+	"github.com/ComposableFi/go-subkey/v2/scale"
 	"golang.org/x/crypto/blake2b"
 	"golang.org/x/crypto/ed25519"
 )

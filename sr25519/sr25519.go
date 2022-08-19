@@ -5,8 +5,8 @@ import (
 	"fmt"
 
 	sr25519 "github.com/ChainSafe/go-schnorrkel"
+	"github.com/ComposableFi/go-subkey/v2"
 	"github.com/gtank/merlin"
-	"github.com/vedhavyas/go-subkey/v2"
 )
 
 const (
@@ -40,8 +40,8 @@ func (kr keyRing) Verify(msg []byte, signature []byte) bool {
 	if err := sig.Decode(sigs); err != nil {
 		return false
 	}
-	ok, err := kr.pub.Verify(sig, signingContext(msg))
-	if err != nil || !ok {
+
+	if ok := kr.pub.Verify(sig, signingContext(msg)); !ok {
 		return false
 	}
 
@@ -155,7 +155,7 @@ func (s Scheme) FromSeed(seed []byte) (subkey.KeyPair, error) {
 }
 
 func (s Scheme) FromPhrase(phrase, pwd string) (subkey.KeyPair, error) {
-	ms, err := sr25519.MiniSecretKeyFromMnemonic(phrase, pwd)
+	ms, err := sr25519.MiniSecretFromMnemonic(phrase, pwd)
 	if err != nil {
 		return nil, err
 	}
@@ -215,10 +215,7 @@ func (s Scheme) FromPublicKey(bytes []byte) (subkey.PublicKey, error) {
 	}
 	arr := [32]byte{}
 	copy(arr[:], bytes[:32])
-	key, err := sr25519.NewPublicKey(arr)
-	if err != nil {
-		return nil, err
-	}
+	key := sr25519.NewPublicKey(arr)
 
 	return &keyRing{pub: key}, nil
 }

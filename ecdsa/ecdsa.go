@@ -6,9 +6,9 @@ import (
 	"errors"
 
 	"github.com/ChainSafe/go-schnorrkel"
+	"github.com/ComposableFi/go-subkey/v2"
+	"github.com/ComposableFi/go-subkey/v2/scale"
 	secp256k1 "github.com/ethereum/go-ethereum/crypto"
-	"github.com/vedhavyas/go-subkey/v2"
-	"github.com/vedhavyas/go-subkey/v2/scale"
 	"golang.org/x/crypto/blake2b"
 )
 

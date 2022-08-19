@@ -1,9 +1,9 @@
-module github.com/vedhavyas/go-subkey/v2
+module github.com/ComposableFi/go-subkey/v2
 
 go 1.18
 
 require (
-	github.com/ChainSafe/go-schnorrkel v1.0.0
+	github.com/ChainSafe/go-schnorrkel v0.0.0-20200405005733-88cbf1b4c40d
 	github.com/decred/base58 v1.0.4
 	github.com/ethereum/go-ethereum v1.10.20
 	github.com/gtank/merlin v0.1.1

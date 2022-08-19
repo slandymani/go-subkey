@@ -3,8 +3,8 @@ package sr25519
 import (
 	"testing"
 
+	"github.com/ComposableFi/go-subkey/v2"
 	"github.com/stretchr/testify/assert"
-	"github.com/vedhavyas/go-subkey/v2"
 )
 
 func fromHex(t *testing.T, hex string) []byte {

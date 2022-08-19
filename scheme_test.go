@@ -6,11 +6,11 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/ComposableFi/go-subkey/v2"
+	"github.com/ComposableFi/go-subkey/v2/ecdsa"
+	"github.com/ComposableFi/go-subkey/v2/ed25519"
+	"github.com/ComposableFi/go-subkey/v2/sr25519"
 	"github.com/stretchr/testify/assert"
-	"github.com/vedhavyas/go-subkey/v2"
-	"github.com/vedhavyas/go-subkey/v2/ecdsa"
-	"github.com/vedhavyas/go-subkey/v2/ed25519"
-	"github.com/vedhavyas/go-subkey/v2/sr25519"
 )
 
 //nolint:funlen
